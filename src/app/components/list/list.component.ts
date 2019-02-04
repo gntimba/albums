@@ -7,14 +7,11 @@ import { AlbumsService } from './../../albums.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+Albums;
   constructor(private albumsService: AlbumsService) { }
 
   ngOnInit() {
-    this.albumsService.getAlbums()
-    .subscribe(Albums => {
-      console.log(Albums);
-    });
+    this.Albums = this.albumsService.getAlbums();
   }
 
 }

@@ -18,26 +18,26 @@
 			</thead>
 			<tbody>
 
-				<tr ng-repeat="albm in albums">
-					<th scope="row"><a href="{{Albums.id}}"><img src="{{Albums.album_cover}}"  width="50px" height="50px"/></a>
+				<tr *ngFor="let album of Albums | async">
+					<th scope="row"><a href="{{album.id}}"><img src="../../../assets/album/{{album.album_cover}}"  width="50px" height="50px"/></a>
 					</th>
 					<td>
 						<a href="{{Albums.id}}">
-							{{albm.album_name}}
+							{{album.album_name}}
 						</a>
 					</td>
 					<td>
-						{{albm.album_artist}}
+						{{album.album_artist}}
 					</td>
 					<td>
-						{{albm.released_year}}
+						{{album.released_year}}
 					</td>
 					<td>
-						<a href="{{Albums.id}}" class="btn btn-warning">View Reviews</a>
+						<a href="#" role="button" class="btn btn-warning ">View Reviews</a>
 
-						<button id="{{Albums.id}}" class="btn btn-danger delete"  >Remove Album</button>
+						<button id="{{Albums.id}}" class="btn btn-danger delete "  >Remove Album</button>
 
-						<button type="button" class="btn btn-primary">Review {{Albums.album_name}}</button>
+						<button type="button" class="btn btn-primary">Review {{album.album_name}}</button>
 					</td>
 				</tr>
 
