@@ -12,6 +12,7 @@ Albums;
 
   ngOnInit() {
     this.Albums = this.albumsService.getAlbums();
+    console.log(this.albumsService.getAlbums())
   }
 
 }

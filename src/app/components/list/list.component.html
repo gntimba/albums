@@ -10,21 +10,21 @@
 		<table class="table table-striped table-dark table-fixed">
 			<thead>
 				<tr>
-					<th scope="col">Picture</th>
-					<th scope="col">Album Name</th>
-					<th scope="col">Artist</th>
-					<th scope="col">Release Year</th>
+					<th >Picture</th>
+					<th >Album Name</th>
+					<th >Artist</th>
+					<th >Release Year</th>
 				</tr>
 			</thead>
 			<tbody>
 
 				<tr *ngFor="let album of Albums | async">
-					<th scope="row"><a href="{{album.id}}"><img src="../../../assets/album/{{album.album_cover}}"  width="50px" height="50px"/></a>
-					</th>
+					<td width="50px" scope="row"><a href="{{album.id}}"><img src="../../../assets/album/{{album.album_cover}}"  width="50px" height="50px"/></a>
+					</td>
 					<td>
-						<a href="{{Albums.id}}">
+
 							{{album.album_name}}
-						</a>
+
 					</td>
 					<td>
 						{{album.album_artist}}
@@ -32,7 +32,7 @@
 					<td>
 						{{album.released_year}}
 					</td>
-					<td>
+					<td class="bt">
 						<a href="#" role="button" class="btn btn-warning ">View Reviews</a>
 
 						<button id="{{Albums.id}}" class="btn btn-danger delete "  >Remove Album</button>
